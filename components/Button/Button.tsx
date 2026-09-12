@@ -1,10 +1,14 @@
+"use client";
+
 import React, { ButtonHTMLAttributes, ReactNode } from "react";
 import "./button.scss";
 
 export type buttonStyles =
   | "primary"
+  | "primary-blue"
   | "secondary"
   | "secondary-blue"
+  | "secondary-green"
   | "bluish-green-secondary";
 export type buttonSize = "small" | "medium" | "large";
 type Props = {

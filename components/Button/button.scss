@@ -16,6 +16,10 @@
   background-color: colors.$primary;
   color: white;
 }
+.button--primary-blue {
+  background-color: colors.$blue;
+  color: white;
+}
 .button--bluish-green-secondary {
   color: colors.$bluishGreen;
   border: 1.5px solid colors.$bluishGreen;
@@ -29,6 +33,11 @@
   background-color: white;
   color: colors.$blue;
   border: 1.5px solid colors.$blue;
+}
+.button--secondary-green {
+  background-color: white;
+  color: colors.$green;
+  border: 1.5px solid colors.$green;
 }
 .button--width-full {
   width: 100%;

@@ -75,6 +75,26 @@ $base: calc((1vh + 1vw) / 2);
   }
 }
 
+.margin-left-medium {
+  margin-left: 2.1rem;
+  @include breakpoints.min(medium) {
+    margin-left: 1.8rem;
+  }
+  @include breakpoints.min(large) {
+    margin-left: 1.4rem;
+  }
+}
+
+.margin-bottom-small {
+  margin-bottom: 1.6rem;
+  @include breakpoints.min(medium) {
+    margin-bottom: 1.3rem;
+  }
+  @include breakpoints.min(large) {
+    margin-bottom: 1rem;
+  }
+}
+
 @function calcSizeOfVwPlusVhDividedByTwo($size) {
   $sizevh: $size * 1vh;
   $sizevw: $size * 1vw;

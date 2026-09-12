@@ -7,6 +7,7 @@ import { Dropdown } from "../Dropdown";
 import "./header.scss";
 import { getCredentialsByCookie, removeAuthCookie } from "@/helpers/cookie";
 import { redirect } from "next/navigation";
+import QuantityInCartButton from "./QuantityInCartButton";
 
 export const Header = () => {
   const [credentials, setCredentials] = useState<any>();
@@ -24,34 +25,36 @@ export const Header = () => {
   return (
     <header>
       <Logo />
-      <Dropdown
-        title={username ? username : "Minha conta"}
-        buttonStyle={username && "secondary-blue"}
-        buttonClassName="dropdown__my-account-button"
-        buttonSize="large"
-      >
-        {username ? (
-          <Button
-            style="secondary"
-            className="dropdown__button dropdown__exit-button"
-            onClick={exit}
-          >
-            <Link href="/">Sair</Link>
-          </Button>
-        ) : (
-          <>
+      <div style={{display: 'flex', alignItems: 'center'}}>
+        <Dropdown
+          title={username ? username : "Minha conta"}
+          buttonStyle={username && "secondary-blue"}
+          buttonClassName="dropdown__my-account-button"
+        >
+          {username ? (
             <Button
               style="secondary"
-              className=" dropdown__button dropdown__login-button"
+              className="dropdown__button dropdown__exit-button"
+              onClick={exit}
             >
-              <Link href="/signin">Fazer login</Link>
+              <Link href="/">Sair</Link>
             </Button>
-            <Button style="secondary" className="dropdown__button">
-              <Link href="/new-account">Criar conta</Link>
-            </Button>
-          </>
-        )}
-      </Dropdown>
+          ) : (
+            <>
+              <Button
+                style="secondary"
+                className=" dropdown__button dropdown__login-button"
+              >
+                <Link href="/signin">Fazer login</Link>
+              </Button>
+              <Button style="secondary" className="dropdown__button">
+                <Link href="/new-account">Criar conta</Link>
+              </Button>
+            </>
+          )}
+        </Dropdown>
+        <QuantityInCartButton />
+      </div>
     </header>
   );
 };
